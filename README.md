@@ -34,3 +34,6 @@ Gerenciador de pacotes do node
 É o protocolo que determina as regras das requisições
 
 - Métodos http (GET, POST, PUT, PATCH, DELETE)
+
+- Como mudar o formato de importação/ exportação de require para import
+Adicionar no package.json a propriedade type: "module"
