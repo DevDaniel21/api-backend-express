@@ -4,7 +4,6 @@
   "description": "API Backend com Express, Prisma e Zod",
   "main": "index.js",
   "scripts": {
-    "test": ""
   },
   "keywords": [
     "node",
