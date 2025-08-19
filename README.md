@@ -42,6 +42,8 @@
 
 -   --watch (parametro para rodar um js em modo dev, que permite rodar novamente o script quando algum arquivo é alterado)
 
+-   Router (Para que separar as rotas?)
+
 Sintaxe básica de uma rota da API
 
 app.post('/produto', (req, res) => {
