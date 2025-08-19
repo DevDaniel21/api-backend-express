@@ -1,36 +1,19 @@
 import express from 'express'
+import profileRouter from './routers/profileRouter.js'
+import productRouter from './routers/productRouter.js'
+import supplierRouter from './routers/supplierRouter.js'
+import carRouter from './routers/carRouter.js'
 
 const app = express()
 const port = 3000
 
-app.use(express.json())
+app.use(express.json()) // Converter o JSON que chegou na requisição em um objeto js e vai salvar no req.body
 
-// CRUD profile
-app.post('/profile', (req, res) => {
-  const dados = req.body
-  res.json({
-    message: "Profile has created successfully!",
-    profile: dados
-  })
-})
-
-app.get('/profile', (req, res) => {
-  res.json({message: "Data of profile has been taken successfully!"})
-})
-
-app.put('/profile', (req, res) => {
-  const dados = req.body
-  res.json({
-    message: "Profile has updated successfully!",
-    profile: dados
-  })
-})
-
-app.delete('/profile', (req, res) => {
-  res.json({message: "Profile has deleted successfully!"})
-})
+app.use('/profile', profileRouter)
+app.use('/product', productRouter)
+app.use('/supplier', supplierRouter)
+app.use('/car', carRouter)
 
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`)
-  console.log('Use Ctrl+C para desligar o servidor')
+  console.log(`API rodando em http://localhost:${port}`)
 })
