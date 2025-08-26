@@ -1,33 +1,16 @@
-import express from 'express'
+import express from 'express';
+import { createSupplierController } from '../controllers/supplier/createSupplierController.js';
+import { listSupplierController } from '../controllers/supplier/listSupplierController.js';
+import { getByIdSupplierController } from '../controllers/supplier/getByIdSupplierController.js';
+import { editSupplierController } from '../controllers/supplier/editSupplierController.js';
+import { deleteSupplierController } from '../controllers/supplier/deleteSupplierController.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.post('/', (req, res) => {
-  const dados = req.body
-  res.json({
-    message: "Supplier has created successfully!",
-    supplier: dados
-  })
-})
+router.post('/', createSupplierController);
+router.get('/', listSupplierController);
+router.get('/:id', getByIdSupplierController);
+router.put('/:id', editSupplierController);
+router.delete('/:id', deleteSupplierController);
 
-router.get('/:id', (req, res) => {
-  const id = req.params.id
-  res.json({message: `Data of supplier with id:${id} has been taken successfully!`})
-})
-
-
-router.put('/:id', (req, res) => {
-  const id = req.params.id
-  const dados = req.body
-  res.json({
-    message: `Supplier with id:${id} has updated successfully!`,
-    supplier: dados
-  })
-})
-
-router.delete('/:id', (req, res) => {
-  const id = req.params.id
-  res.json({message: `Supplier with id:${id} has deleted successfully!`})
-})
-
-export default router
+export default router;

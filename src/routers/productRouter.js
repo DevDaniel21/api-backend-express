@@ -1,33 +1,16 @@
-import express from 'express'
+import express from 'express';
+import { createProductController } from '../controllers/product/createProductController.js';
+import { listProductController } from '../controllers/product/listProductController.js';
+import { getByIdProductController } from '../controllers/product/getByIdProductController.js';
+import { editProductController } from '../controllers/product/editProductController.js';
+import { deleteProductController } from '../controllers/product/deleteProductController.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.post('/', (req, res) => {
-  const dados = req.body
-  res.json({
-    message: "Product has created successfully!",
-    product: dados
-  })
-})
+router.post('/', createProductController);
+router.get('/', listProductController);
+router.get('/:id', getByIdProductController);
+router.put('/:id', editProductController);
+router.delete('/:id', deleteProductController);
 
-router.get('/:id', (req, res) => {
-  const id = req.params.id
-  res.json({message: `Data of product with id:${id} has been taken successfully!`})
-})
-
-
-router.put('/:id', (req, res) => {
-  const id = req.params.id
-  const dados = req.body
-  res.json({
-    message: `Product with id:${id} has updated successfully!`,
-    product: dados
-  })
-})
-
-router.delete('/:id', (req, res) => {
-  const id = req.params.id
-  res.json({message: `Product with id:${id} has deleted successfully!`})
-})
-
-export default router
+export default router;

@@ -1,33 +1,16 @@
-import express from 'express'
+import express from 'express';
+import { createProfileController } from '../controllers/profile/createProfileController.js';
+import { listProfileController } from '../controllers/profile/listProfileController.js';
+import { getByIdProfileController } from '../controllers/profile/getByIdProfileController.js';
+import { editProfileController } from '../controllers/profile/editProfileController.js';
+import { deleteProfileController } from '../controllers/profile/deleteProfileController.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.post('/', (req, res) => {
-  const dados = req.body
-  res.json({
-    message: "Profile has created successfully!",
-    profile: dados
-  })
-})
+router.post('/', createProfileController);
+router.get('/', listProfileController);
+router.get('/:id', getByIdProfileController);
+router.put('/:id', editProfileController);
+router.delete('/:id', deleteProfileController);
 
-router.get('/:id', (req, res) => {
-  const id = req.params.id
-  res.json({message: `Data of profile with id:${id} has been taken successfully!`})
-})
-
-
-router.put('/:id', (req, res) => {
-  const id = req.params.id
-  const dados = req.body
-  res.json({
-    message: `Profile with id:${id} has updated successfully!`,
-    profile: dados
-  })
-})
-
-router.delete('/:id', (req, res) => {
-  const id = req.params.id
-  res.json({message: `Profile with id:${id} has deleted successfully!`})
-})
-
-export default router
+export default router;

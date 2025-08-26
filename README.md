@@ -44,6 +44,18 @@
 
 -   Router (Para que separar as rotas?)
 
+-   Parâmetros de rota. Exemplo: /:id
+
+-   O que é Padrâo de Projeto
+
+-   Sigla MVC
+
+-   Para que serve o Padrâo de Projeto MVC?
+
+-   Qual a responsabilidade das camadas de MOdelo, Visão e Controle?
+
+## Sintaxe básica de uma rota no express
+
 Sintaxe básica de uma rota da API
 
 app.post('/produto', (req, res) => {
