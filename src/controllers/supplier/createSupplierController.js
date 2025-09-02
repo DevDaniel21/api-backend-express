@@ -1,7 +1,7 @@
 export const createSupplierController = (req, res) => {
     const dados = req.body;
     res.json({
-        message: 'Supplier has created successfully!',
+        message: 'Fornecedor criado com sucesso!',
         supplier: dados,
     });
 };

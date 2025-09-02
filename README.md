@@ -65,3 +65,20 @@ res.json({message: 'Criado com sucesso!})
 -   método criar/ inserir: post
 -   Rota ou endereço: /produto
 -   tipo de resposta: json
+
+## Comandos do Prisma
+
+-   Instalação do Prisma
+    -   npm i prisma -D
+    -   npm i @prisma/client
+
+-   Inicializar o Prisma
+    -   npx prisma init
+
+-   Gerar o model do prisma a partir de um BD existente
+    -   npx prisma db pull
+
+-   Gerar o BD a partir de um model do prisma
+    -   npx prisma db push
+
+-   Gerar os arquivos

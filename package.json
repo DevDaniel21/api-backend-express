@@ -15,9 +15,13 @@
     "zod",
     "mysql"
   ],
-  "author": "Daniel dos Santos Ferreira Custodio",  
+  "author": "Daniel dos Santos Ferreira Custodio",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^6.15.0",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.15.0"
   }
 }

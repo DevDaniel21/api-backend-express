@@ -1,3 +1,10 @@
-export const listProfileController = (req, res) => {
-    res.json({ message: 'List of profiles retrieved successfully!' });
+import { list } from '../../models/profileModel.js';
+
+export const listProfileController = async (req, res) => {
+    const result = await list();
+
+    res.json({ 
+        message: 'Lista de perfis adquiridas com sucesso!',
+        profiles: result 
+    });
 };
