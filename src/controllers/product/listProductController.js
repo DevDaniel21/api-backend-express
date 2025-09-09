@@ -1,6 +1,10 @@
-export const listProductController = (req, res) => {
-    const id = req.params.id;
+import { list } from '../../models/productModel.js';
+
+export const listProductController = async (req, res) => {
+    const result = await list();
+
     res.json({
-        message: `Lista de produtos obtida com sucesso!`,
+        message: 'Lista de produtos obtida com sucesso!',
+        products: result,
     });
 };
