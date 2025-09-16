@@ -52,7 +52,13 @@
 
 -   Para que serve o Padrâo de Projeto MVC?
 
--   Qual a responsabilidade das camadas de MOdelo, Visão e Controle?
+-   Qual a responsabilidade das camadas de Modelo, Visão e Controle?
+
+-   O que é um ORM
+
+-   Prisma ORM
+
+-   Padrão de Projeto Middleware, é uma padrão de projeto usado no express sendo uma forma de organizar o código em funções que vão ser executadas em sequência ou fluxo de execução onde cada middleware tem sua responsabilidade passando de um para outro para chegar no resultado esperado
 
 ## Sintaxe básica de uma rota no express
 
